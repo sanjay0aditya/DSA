@@ -1,0 +1,26 @@
+Binary Exponentiation is an important algorithm to learn in Math. 
+We use binary exponentiation to calculate the power of any number.
+To compute the b power of a (a^b) it takes O(b) time to compute (multiply a by itself b times).
+To reduce this computation to O(log b) time we use binary exponentiation.
+
+Ex:- To compute 2^8 we write it as (2 * 2 * 2 * 2 * 2 * 2 * 2 * 2) = 256 (8 operations)
+But we can write it as 2^8 = 4^4 = 16^2 = 256^1 = 256 (3 operations)
+
+Idea = The idea of this algorithm is to square the base and divide the power by 2 to reduce the time.
+
+In the case of odd powers we have to account for an res variable to store odd powers.
+Ex:- 2^13 = 4^6 . 2 = 16^3 . 2 = 256 ^ 1 . 2. 16 = 8192.
+
+Pseudocode: 
+function binary_exp(a, n):
+    result = 1
+    while n > 0:
+        if n % 2 == 1:
+            result = result * a
+        a = a * a
+        n = n / 2
+    return result
+
+Problem Links:
+https://leetcode.com/problems/powx-n/
+https://leetcode.com/problems/super-pow/
